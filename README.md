@@ -20,5 +20,7 @@ Commands:
 - decode
 - uwufy
 - pasta _new_
+- omegalul
+- omagaclown
 
 [Discord](https://discord.gg/KkMKCchJb8)
