@@ -7,6 +7,7 @@ const {
 	fullWidthLetters,
 	emojiLetters,
 	omegalul,
+	omegaclown,
 } = require('./maps');
 const pasta = require('./emojimixer');
 const uwufy = require('./uwufy');
@@ -65,13 +66,24 @@ module.exports = class Texter extends Plugin {
 		
 		powercord.api.commands.registerCommand({
 			command: 'omegalul',
-			description: 'omegalul',
+			description: 'replaces "o" with :omegalul:',
 			usage: '{c} [Text you want to flip]',
 			executor: (args) => ({
 				send: true,
 				result: args.join(' ').omegalul(),
 			}),
 		});
+		
+		powercord.api.commands.registerCommand({
+			command: 'omegaclown',
+			description: 'replaces "o" with :omegaclown:',
+			usage: '{c} [Text you want to flip]',
+			executor: (args) => ({
+				send: true,
+				result: args.join(' ').omegaclown(),
+			}),
+		});
+
 
 		powercord.api.commands.registerCommand({
 			command: 'shrug',
@@ -207,6 +219,7 @@ module.exports = class Texter extends Plugin {
 			'emoji',
 			'uwufy',
 			'omegalul',
+			'omegaclown',
 			'space',
 			'pasta',
 		]) {
@@ -258,4 +271,7 @@ String.prototype.fullWidth = function () {
 };
 String.prototype.omegalul = function () {
 	return [...this].map((l) => omegalul[l] || l).join('');
+};
+String.prototype.omegaclown = function () {
+	return [...this].map((l) => omegaclown[l] || l).join('');
 };
